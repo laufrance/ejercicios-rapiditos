@@ -38,32 +38,27 @@ conversar
 	self pensarQueResponder.
 	^self responder.! !
 
-!GuardiaDeSkyrim class methodsFor: 'as yet unclassified' stamp: 'LF 10/2/2020 10:40:39'!
+!GuardiaDeSkyrim class methodsFor: 'as yet unclassified' stamp: 'LF 10/2/2020 17:56:09'!
 initializeCollaboratorsFromFile
 	"Auto generated method for loading purposes - Do not modify it"
 
 	obtenerRespuestasPosibles := #('Hola forastero' 'Alguien esta de buen humor...' 'Eres un sujeto de muchas palabras al parecer' '...' 'No, no quiero ser mi propio jefe' ).
-	cantidadDeVecesQueHablaronConmigo := 5.
+	cantidadDeVecesQueHablaronConmigo := 0.
 	respuesta := 'No, no quiero ser mi propio jefe'.! !
 
-!GuardiaDeSkyrim class methodsFor: 'as yet unclassified' stamp: 'LF 10/2/2020 10:09:01'!
+!GuardiaDeSkyrim class methodsFor: 'as yet unclassified' stamp: 'LF 10/2/2020 17:54:16'!
 pensarQueResponder
 
-	cantidadDeVecesQueHablaronConmigo = 1 ifTrue: [respuesta:= obtenerRespuestasPosibles at: 1].
-	cantidadDeVecesQueHablaronConmigo = 2 ifTrue: [respuesta:= obtenerRespuestasPosibles at: 2].
-	cantidadDeVecesQueHablaronConmigo = 3 ifTrue: [respuesta:= obtenerRespuestasPosibles at: 3].
-	cantidadDeVecesQueHablaronConmigo = 4 ifTrue: [respuesta:= obtenerRespuestasPosibles at: 4].
-	cantidadDeVecesQueHablaronConmigo > 4 ifTrue: [respuesta:= obtenerRespuestasPosibles at: 5].! !
 
-!GuardiaDeSkyrim class methodsFor: 'as yet unclassified' stamp: 'LF 10/2/2020 10:30:24'!
+	cantidadDeVecesQueHablaronConmigo >= obtenerRespuestasPosibles size
+	ifTrue: [respuesta:= obtenerRespuestasPosibles at: obtenerRespuestasPosibles size]
+	ifFalse: [respuesta:= obtenerRespuestasPosibles at: cantidadDeVecesQueHablaronConmigo].! !
+
+!GuardiaDeSkyrim class methodsFor: 'as yet unclassified' stamp: 'LF 10/2/2020 17:55:40'!
 pensarRespuestasPosibles
 
-	obtenerRespuestasPosibles := Array new: 5.
-	obtenerRespuestasPosibles at: 1 put: 'Hola forastero' .
-	obtenerRespuestasPosibles at: 2 put: 'Alguien esta de buen humor...'.
-	obtenerRespuestasPosibles at: 3 put: 'Eres un sujeto de muchas palabras al parecer'.
-	obtenerRespuestasPosibles at: 4 put: '...'.
-	obtenerRespuestasPosibles at: 5 put: 'No, no quiero ser mi propio jefe'.! !
+	obtenerRespuestasPosibles := #('Hola forastero' 'Alguien esta de buen humor...' 'Eres un sujeto de muchas palabras al parecer' '...' 'No, no quiero ser mi propio jefe').
+! !
 
 !GuardiaDeSkyrim class methodsFor: 'as yet unclassified' stamp: 'SF 10/1/2020 21:51:16'!
 recordarQueConversaronConmigo
